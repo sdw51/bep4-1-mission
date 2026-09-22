@@ -82,6 +82,7 @@ public class MarketFacade {
         return marketSupport.countOrders();
     }
 
+    @Transactional(readOnly = true)
     public RsData<Order> createOrder(Cart cart) {
         return marketCreateOrderUseCase.createOrder(cart);
     }
